@@ -1,4 +1,5 @@
 require 'active_support'
+require 'activemodel-serializers-xml'
 require 'ooorest/engine'
 require 'ooorest/action_window_controller'
 require 'action_pack'
@@ -52,17 +53,17 @@ module Ooorest
 
   AbstractController::Base.send :include, RequestHelper
 
-  class ActionController::Base
-    helper RequestHelper
-    def current_user
-      user = super
-      class << user
-        include Ooorest::User
-      end
-      user.set_env(env)
-      user
-    end
-  end
+  # class ActionController::Base
+  #   helper RequestHelper
+  #   def current_user
+  #     user = super
+  #     class << user
+  #       include Ooorest::User
+  #     end
+  #     user.set_env(env)
+  #     user
+  #   end
+  # end
 
   module Paginator
     def total_count(column_name = nil, options = {})

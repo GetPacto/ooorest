@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency "warden"
   s.add_dependency "ooor", ">= 1.9"
   s.add_dependency 'kaminari'
-
+  s.add_dependency 'activemodel-serializers-xml'
+  
   s.add_development_dependency "tzinfo" # FIXME: why the hell do we need this for 3.1?
 end
